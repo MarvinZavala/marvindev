@@ -18,6 +18,13 @@ export const metadata: Metadata = {
   keywords: "Marvin Zavala, desarrollador web, Next.js, React Native, Firebase, Oakland, California, estudiante, programador",
   authors: [{ name: "Marvin Zavala" }],
   creator: "Marvin Zavala",
+  icons: {
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/favicon.ico", sizes: "any" }
+    ],
+    apple: "/favicon.svg",
+  },
   openGraph: {
     type: "website",
     locale: "es_US",

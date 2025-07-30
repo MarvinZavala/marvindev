@@ -22,11 +22,13 @@ export default function Hero() {
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="w-32 h-32 mx-auto mb-8 rounded-full bg-gradient-to-r from-primary to-blue-600 p-1"
+            className="w-32 h-32 mx-auto mb-8 rounded-full bg-gradient-to-r from-gray-800 to-black p-1"
           >
-            <div className="w-full h-full rounded-full bg-muted flex items-center justify-center text-4xl font-bold text-primary">
-              MZ
-            </div>
+            <img 
+              src="/0228D122-A3E7-43BC-A27C-A9F94B237DB5.PNG" 
+              alt="Marvin Zavala" 
+              className="w-full h-full rounded-full object-cover object-[center_20%]"
+            />
           </motion.div>
 
           {/* Name and Title */}
@@ -34,7 +36,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-foreground to-primary bg-clip-text text-transparent"
+            className="text-5xl md:text-7xl font-bold text-foreground"
           >
             Marvin Zavala
           </motion.h1>

@@ -86,10 +86,14 @@ export default function About() {
           >
             <div className="w-full h-80 bg-gradient-to-br from-primary/20 to-blue-600/20 rounded-2xl flex items-center justify-center">
               <div className="text-center">
-                <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-gradient-to-r from-primary to-blue-600 flex items-center justify-center text-2xl font-bold text-white">
-                  MZ
+                <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-gradient-to-r from-primary to-blue-600 p-1">
+                  <img 
+                    src="/0228D122-A3E7-43BC-A27C-A9F94B237DB5.PNG" 
+                    alt="Marvin Zavala" 
+                    className="w-full h-full rounded-full object-cover"
+                  />
                 </div>
-                <p className="text-muted-foreground">Foto de perfil próximamente</p>
+                <p className="text-muted-foreground">Marvin Zavala - Desarrollador Web</p>
               </div>
             </div>
           </motion.div>

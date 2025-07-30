@@ -62,11 +62,8 @@ export default function Navigation() {
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="flex items-center gap-2"
+              className="flex items-center"
             >
-              <div className="w-8 h-8 rounded-full bg-gradient-to-r from-primary to-blue-600 flex items-center justify-center text-white font-bold text-sm">
-                MZ
-              </div>
               <span className="font-bold text-lg">Marvin Zavala</span>
             </motion.div>
 
@@ -119,10 +116,7 @@ export default function Navigation() {
           <div className="fixed inset-0 bg-background/80 backdrop-blur-md" onClick={() => setIsOpen(false)} />
           <div className="fixed right-0 top-0 h-full w-80 bg-background border-l border-border p-6">
             <div className="flex items-center justify-between mb-8">
-              <div className="flex items-center gap-2">
-                <div className="w-8 h-8 rounded-full bg-gradient-to-r from-primary to-blue-600 flex items-center justify-center text-white font-bold text-sm">
-                  MZ
-                </div>
+              <div className="flex items-center">
                 <span className="font-bold text-lg">Marvin Zavala</span>
               </div>
               <Button variant="ghost" size="sm" onClick={() => setIsOpen(false)}>
