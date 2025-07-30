@@ -1,36 +1,145 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Marvin Zavala - Portafolio Personal
 
-## Getting Started
+¡Bienvenido a mi portafolio personal! Soy Marvin Zavala, un estudiante de high school de 18 años apasionado por el desarrollo web, la inteligencia artificial y la creación de startups.
 
-First, run the development server:
+## 🚀 Sobre el Proyecto
 
+Este es mi sitio web personal desarrollado con las tecnologías más modernas para mostrar mis habilidades, proyectos y experiencia como desarrollador.
+
+## 🛠️ Stack Tecnológico
+
+- **Framework**: Next.js 15 con App Router
+- **Styling**: Tailwind CSS
+- **Componentes**: ShadCN UI
+- **Animaciones**: Framer Motion
+- **Lenguaje**: TypeScript
+- **Deployment**: Vercel (recomendado)
+
+## ✨ Características
+
+- ✅ Diseño responsivo y moderno
+- ✅ Animaciones suaves con Framer Motion
+- ✅ Navegación fluida entre secciones
+- ✅ Formulario de contacto funcional
+- ✅ Optimizado para SEO
+- ✅ Modo oscuro/claro automático
+- ✅ Componentes reutilizables
+- ✅ Código limpio y bien documentado
+
+## 📋 Secciones
+
+1. **Hero** - Presentación principal con información básica
+2. **Sobre Mí** - Biografía personal y mis intereses
+3. **Habilidades** - Tecnologías y herramientas que domino
+4. **Certificaciones** - Certificaciones oficiales y logros
+5. **Proyectos** - Portafolio de proyectos destacados
+6. **Experiencia** - Trayectoria profesional y personal
+7. **Testimonios** - Reseñas de clientes y frases inspiradoras
+8. **Contacto** - Formulario y información de contacto
+
+## 🚀 Instalación y Uso
+
+### Prerrequisitos
+
+- Node.js 18+ 
+- npm o yarn
+
+### Instalación
+
+1. Clona el repositorio:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/marvinzavala/portfolio.git
+cd portfolio
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Instala las dependencias:
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Inicia el servidor de desarrollo:
+```bash
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4. Abre [http://localhost:3000](http://localhost:3000) en tu navegador.
 
-## Learn More
+## 📦 Scripts Disponibles
 
-To learn more about Next.js, take a look at the following resources:
+- `npm run dev` - Inicia el servidor de desarrollo
+- `npm run build` - Construye la aplicación para producción
+- `npm run start` - Inicia el servidor de producción
+- `npm run lint` - Ejecuta el linter
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🎨 Personalización
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Colores
 
-## Deploy on Vercel
+El sitio usa una paleta de colores personalizada definida en `src/app/globals.css`:
+- **Primario**: Azul (#07AFFF)
+- **Secundario**: Blanco y negro
+- **Acentos**: Gradientes azules
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Contenido
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Para personalizar el contenido:
+
+1. **Información personal**: Edita los componentes en `src/components/sections/`
+2. **Proyectos**: Modifica el array `projects` en `Projects.tsx`
+3. **Habilidades**: Actualiza `skillCategories` en `Skills.tsx`
+4. **Experiencia**: Edita `experiences` en `Experience.tsx`
+
+## 🌐 Deployment
+
+### Vercel (Recomendado)
+
+1. Conecta tu repositorio a Vercel
+2. Configura las variables de entorno si es necesario
+3. Deploy automático en cada push
+
+### Otras opciones
+
+- **Netlify**: Compatible con builds estáticos
+- **Firebase Hosting**: Ideal para integración con Firebase
+- **GitHub Pages**: Para hosting gratuito
+
+## 📧 Formulario de Contacto
+
+El formulario está preparado para integrarse con:
+- **Formspree**: Servicio recomendado para formularios
+- **EmailJS**: Alternativa client-side
+- **Netlify Forms**: Si usas Netlify
+
+Para configurar Formspree:
+1. Crea una cuenta en [formspree.io](https://formspree.io)
+2. Obtén tu endpoint
+3. Actualiza la función `handleSubmit` en `Contact.tsx`
+
+## 🔧 Estructura del Proyecto
+
+```
+src/
+├── app/
+│   ├── globals.css
+│   ├── layout.tsx
+│   └── page.tsx
+├── components/
+│   ├── ui/              # Componentes ShadCN UI
+│   ├── sections/        # Secciones del sitio
+│   └── Navigation.tsx   # Navegación principal
+└── lib/
+    └── utils.ts         # Utilidades
+```
+
+## 📞 Contacto
+
+- **Email**: marvin@example.com
+- **LinkedIn**: [linkedin.com/in/marvin-zavala](https://linkedin.com/in/marvin-zavala)
+- **GitHub**: [github.com/marvinzavala](https://github.com/marvinzavala)
+- **Ubicación**: Oakland, California
+
+---
+
+⭐ Si te gusta este proyecto, ¡dale una estrella en GitHub!
+
+**Desarrollado con ❤️ por Marvin Zavala en Oakland, California**
