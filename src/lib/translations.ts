@@ -24,18 +24,18 @@ export const translations = {
     // About Section
     about: {
       title: 'Sobre Mí',
-      subtitle: 'Soy un estudiante de 11° grado apasionado por la tecnología y la innovación. Con más de un año de experiencia en desarrollo web y una app completa en React Native, busco crear soluciones que impacten positivamente en la vida de las personas.',
+      subtitle: 'Soy estudiante de preparatoria y me encanta crear cosas con código. Llevo más de un año haciendo páginas web y apps, y siempre busco hacer proyectos que realmente sirvan para algo.',
       myStory: 'Mi Historia',
-      story1: 'Desde Oakland, California, he encontrado en la programación una forma de expresar mi creatividad y resolver problemas reales. Mi viaje comenzó con curiosidad por entender cómo funcionan las aplicaciones que uso diariamente.',
-      story2: 'Actualmente estoy en 11° grado, pero mi pasión por la tecnología me ha llevado a desarrollar proyectos como Localfy, NEGOZAPP, Onlypic y TutorNowSV, cada uno con el objetivo de facilitar la vida de las personas a través de la tecnología.',
-      story3: 'Mi enfoque está completamente dedicado al desarrollo de software y la creación de soluciones tecnológicas que puedan hacer una diferencia real en el mundo.',
-      interests: 'Mis Intereses',
-      webDev: 'Desarrollo Web',
-      webDevDesc: 'Creando aplicaciones web modernas con Next.js y React',
+      story1: 'Vivo en Oakland, California, y descubrí que programar es como resolver rompecabezas gigantes. Todo empezó porque quería entender cómo funcionaban las apps que uso todos los días.',
+      story2: 'Aunque todavía estoy en la prepa, ya he hecho varios proyectos como Localfy, NEGOZAPP, Onlypic y TutorNowSV. Cada uno lo hice pensando en cómo podría ayudar a la gente de alguna manera.',
+      story3: 'Lo que más me gusta es crear cosas que funcionen bien y que la gente realmente use. No me conformo con que solo se vea bonito, tiene que servir para algo.',
+      interests: 'Lo que me gusta',
+      webDev: 'Hacer páginas web',
+      webDevDesc: 'Me gusta crear sitios web que se vean bien y funcionen rápido',
       ai: 'Inteligencia Artificial',
-      aiDesc: 'Explorando el potencial de la IA en aplicaciones prácticas',
-      startups: 'Startups',
-      startupsDesc: 'Desarrollando ideas innovadoras y soluciones tecnológicas'
+      aiDesc: 'Estoy aprendiendo cómo usar IA para hacer cosas útiles',
+      startups: 'Emprendimiento',
+      startupsDesc: 'Me emociona crear proyectos nuevos que resuelvan problemas'
     },
     // Skills Section
     skills: {
@@ -261,18 +261,18 @@ export const translations = {
     // About Section
     about: {
       title: 'About Me',
-      subtitle: 'I\'m an 11th grade student passionate about technology and innovation. With over a year of experience in web development and a complete React Native app, I seek to create solutions that positively impact people\'s lives.',
+      subtitle: 'I\'m a high school student who loves building stuff with code. I\'ve been making websites and apps for over a year now, and I always try to create projects that actually help people.',
       myStory: 'My Story',
-      story1: 'From Oakland, California, I have found in programming a way to express my creativity and solve real problems. My journey began with curiosity to understand how the applications I use daily work.',
-      story2: 'I\'m currently in 11th grade, but my passion for technology has led me to develop projects like Localfy, NEGOZAPP, Onlypic and TutorNowSV, each with the goal of making people\'s lives easier through technology.',
-      story3: 'My focus is completely dedicated to software development and creating technological solutions that can make a real difference in the world.',
-      interests: 'My Interests',
-      webDev: 'Web Development',
-      webDevDesc: 'Creating modern web applications with Next.js and React',
+      story1: 'I live in Oakland, California, and I found out that coding is like solving giant puzzles. It all started because I wanted to understand how the apps I use every day actually work.',
+      story2: 'Even though I\'m still in high school, I\'ve already built several projects like Localfy, NEGOZAPP, Onlypic and TutorNowSV. Each one I made thinking about how it could help people somehow.',
+      story3: 'What I love most is creating things that work well and that people actually use. I don\'t settle for just making it look pretty - it has to be useful.',
+      interests: 'What I enjoy',
+      webDev: 'Building websites',
+      webDevDesc: 'I like creating websites that look good and run fast',
       ai: 'Artificial Intelligence',
-      aiDesc: 'Exploring AI potential in practical applications',
-      startups: 'Startups',
-      startupsDesc: 'Developing innovative ideas and technological solutions'
+      aiDesc: 'I\'m learning how to use AI to build useful stuff',
+      startups: 'Entrepreneurship',
+      startupsDesc: 'I get excited about creating new projects that solve problems'
     },
     // Skills Section
     skills: {
