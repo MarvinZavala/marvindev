@@ -3,8 +3,10 @@
 import { motion } from 'framer-motion'
 import { Card, CardContent } from '@/components/ui/card'
 import { Quote, Star } from 'lucide-react'
+import { useLanguage } from '@/contexts/LanguageContext'
 
 export default function Testimonials() {
+  const { t } = useLanguage()
   const testimonials = [
     {
       quote: "Marvin demostró una capacidad excepcional para entender nuestras necesidades y crear una solución que superó nuestras expectativas.",
@@ -59,10 +61,10 @@ export default function Testimonials() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-foreground to-primary bg-clip-text text-transparent">
-            Testimonios & Inspiración
+            {t('testimonials.title')}
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Lo que dicen sobre mi trabajo y las frases que me inspiran a seguir innovando
+            {t('testimonials.subtitle')}
           </p>
         </motion.div>
 
@@ -75,7 +77,7 @@ export default function Testimonials() {
             viewport={{ once: true }}
             className="text-2xl font-bold mb-8 text-center"
           >
-            Lo que dicen mis clientes
+            {t('testimonials.clientTestimonials')}
           </motion.h3>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -99,7 +101,7 @@ export default function Testimonials() {
                     </div>
                     
                     <blockquote className="text-muted-foreground mb-6 leading-relaxed italic">
-                      "{testimonial.quote}"
+                      &ldquo;{testimonial.quote}&rdquo;
                     </blockquote>
                     
                     <div className="border-t pt-4">
@@ -122,7 +124,7 @@ export default function Testimonials() {
           viewport={{ once: true }}
         >
           <h3 className="text-2xl font-bold mb-8 text-center">
-            Frases que me inspiran
+            {t('testimonials.inspirationalQuotes')}
           </h3>
           
           <div className="grid sm:grid-cols-2 gap-6">
@@ -138,7 +140,7 @@ export default function Testimonials() {
                   <CardContent className="p-6 text-center">
                     <Quote className="w-8 h-8 text-primary/30 mx-auto mb-4 group-hover:text-primary/50 transition-colors" />
                     <blockquote className="text-lg font-medium mb-4 leading-relaxed group-hover:text-primary transition-colors">
-                      "{quote.quote}"
+                      &ldquo;{quote.quote}&rdquo;
                     </blockquote>
                     <cite className="text-muted-foreground text-sm">
                       — {quote.author}
@@ -162,8 +164,7 @@ export default function Testimonials() {
             <CardContent className="p-8 text-center">
               <Quote className="w-12 h-12 text-primary mx-auto mb-6" />
               <blockquote className="text-2xl font-bold mb-6 leading-relaxed">
-                "Mi misión es usar la tecnología para crear soluciones que realmente importen, 
-                conectando a las personas y facilitando sus vidas diarias."
+                &ldquo;{t('testimonials.personalMission')}&rdquo;
               </blockquote>
               <cite className="text-primary font-semibold">
                 — Marvin Zavala
@@ -183,19 +184,19 @@ export default function Testimonials() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
             <div className="space-y-2">
               <div className="text-3xl font-bold text-primary">100%</div>
-              <div className="text-sm text-muted-foreground">Satisfacción del cliente</div>
+              <div className="text-sm text-muted-foreground">{t('testimonials.stats.satisfaction')}</div>
             </div>
             <div className="space-y-2">
               <div className="text-3xl font-bold text-primary">5⭐</div>
-              <div className="text-sm text-muted-foreground">Calificación promedio</div>
+              <div className="text-sm text-muted-foreground">{t('testimonials.stats.rating')}</div>
             </div>
             <div className="space-y-2">
               <div className="text-3xl font-bold text-primary">3+</div>
-              <div className="text-sm text-muted-foreground">Clientes satisfechos</div>
+              <div className="text-sm text-muted-foreground">{t('testimonials.stats.clients')}</div>
             </div>
             <div className="space-y-2">
               <div className="text-3xl font-bold text-primary">24h</div>
-              <div className="text-sm text-muted-foreground">Tiempo de respuesta</div>
+              <div className="text-sm text-muted-foreground">{t('testimonials.stats.response')}</div>
             </div>
           </div>
         </motion.div>

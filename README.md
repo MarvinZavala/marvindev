@@ -48,8 +48,8 @@ Este es mi sitio web personal desarrollado con las tecnologías más modernas pa
 
 1. Clona el repositorio:
 ```bash
-git clone https://github.com/marvinzavala/portfolio.git
-cd portfolio
+git clone https://github.com/MarvinZavala/marvindev.git
+cd marvindev
 ```
 
 2. Instala las dependencias:
@@ -133,9 +133,11 @@ src/
 
 ## 📞 Contacto
 
-- **Email**: marvin@example.com
-- **LinkedIn**: [linkedin.com/in/marvin-zavala](https://linkedin.com/in/marvin-zavala)
-- **GitHub**: [github.com/marvinzavala](https://github.com/marvinzavala)
+- **Email**: zavalarivas4@gmail.com
+- **Teléfono**: (314) 219-7006
+- **LinkedIn**: [linkedin.com/in/marvin-zavaladev](https://www.linkedin.com/in/marvin-zavaladev)
+- **GitHub**: [github.com/MarvinZavala](https://github.com/MarvinZavala)
+- **Discord**: marvindev_
 - **Ubicación**: Oakland, California
 
 ---

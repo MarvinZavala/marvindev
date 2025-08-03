@@ -3,8 +3,11 @@
 import { motion } from 'framer-motion'
 import { Badge } from '@/components/ui/badge'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { useLanguage } from '@/contexts/LanguageContext'
 
 export default function Skills() {
+  const { t } = useLanguage()
+  
   const skillCategories = [
     {
       title: 'Frontend Development',
@@ -33,8 +36,8 @@ export default function Skills() {
   ]
 
   const languages = [
-    { name: 'Español', level: 'Nativo', percentage: 100 },
-    { name: 'Inglés', level: 'Avanzado', percentage: 90 }
+    { name: t('skills.spanish'), level: t('skills.native'), percentage: 100 },
+    { name: t('skills.english'), level: t('skills.advanced'), percentage: 90 }
   ]
 
   return (
@@ -48,10 +51,10 @@ export default function Skills() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-foreground to-primary bg-clip-text text-transparent">
-            Habilidades & Herramientas
+            {t('skills.title')}
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Tecnologías y herramientas que domino para crear soluciones innovadoras
+            {t('skills.subtitle')}
           </p>
         </motion.div>
 
@@ -107,7 +110,7 @@ export default function Skills() {
         >
           <Card>
             <CardHeader>
-              <CardTitle className="text-center">Idiomas</CardTitle>
+              <CardTitle className="text-center">{t('skills.languages')}</CardTitle>
             </CardHeader>
             <CardContent>
               <div className="space-y-6">
@@ -151,15 +154,15 @@ export default function Skills() {
           <div className="grid sm:grid-cols-3 gap-8 max-w-2xl mx-auto">
             <div className="space-y-2">
               <div className="text-3xl font-bold text-primary">1+</div>
-              <div className="text-sm text-muted-foreground">Años de experiencia</div>
+              <div className="text-sm text-muted-foreground">{t('skills.yearsExp')}</div>
             </div>
             <div className="space-y-2">
               <div className="text-3xl font-bold text-primary">4+</div>
-              <div className="text-sm text-muted-foreground">Proyectos completados</div>
+              <div className="text-sm text-muted-foreground">{t('skills.projectsCompleted')}</div>
             </div>
             <div className="space-y-2">
               <div className="text-3xl font-bold text-primary">15+</div>
-              <div className="text-sm text-muted-foreground">Tecnologías dominadas</div>
+              <div className="text-sm text-muted-foreground">{t('skills.techMastered')}</div>
             </div>
           </div>
         </motion.div>

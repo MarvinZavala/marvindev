@@ -4,9 +4,18 @@ import { motion } from 'framer-motion'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
-import { ExternalLink, Github, Smartphone, Globe, Users, GraduationCap } from 'lucide-react'
+import { ExternalLink, Github, Smartphone, Globe, Users, GraduationCap, Building2 } from 'lucide-react'
+import { useLanguage } from '@/contexts/LanguageContext'
 
 export default function Projects() {
+  const { t } = useLanguage()
+  
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId)
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' })
+    }
+  }
   const projects = [
     {
       title: 'Localfy',
@@ -17,8 +26,8 @@ export default function Projects() {
       status: 'Completado',
       type: 'Web App',
       icon: Globe,
-      demoUrl: '#',
-      githubUrl: '#'
+      demoUrl: 'https://github.com/MarvinZavala',
+      githubUrl: 'https://github.com/MarvinZavala'
     },
     {
       title: 'NEGOZAPP',
@@ -29,8 +38,8 @@ export default function Projects() {
       status: 'Completado',
       type: 'Mobile App',
       icon: Smartphone,
-      demoUrl: '#',
-      githubUrl: '#'
+      demoUrl: 'https://negozapp.com',
+      githubUrl: 'https://github.com/MarvinZavala'
     },
     {
       title: 'Onlypic',
@@ -38,11 +47,11 @@ export default function Projects() {
       image: '📸',
       technologies: ['Next.js', 'Supabase', 'OpenAI API', 'Cloudinary'],
       features: ['Filtros con IA', 'Feed personalizado', 'Stories', 'Marketplace de fotos'],
-      status: 'En desarrollo',
+      status: 'Completado',
       type: 'Web App',
       icon: Users,
-      demoUrl: '#',
-      githubUrl: '#'
+      demoUrl: 'https://www.onlypic.art/',
+      githubUrl: 'https://github.com/MarvinZavala'
     },
     {
       title: 'TutorNowSV',
@@ -53,8 +62,20 @@ export default function Projects() {
       status: 'Completado',
       type: 'Web Platform',
       icon: GraduationCap,
-      demoUrl: '#',
-      githubUrl: '#'
+      demoUrl: 'https://github.com/MarvinZavala',
+      githubUrl: 'https://github.com/MarvinZavala'
+    },
+    {
+      title: 'Strategika Agency',
+      description: 'Agencia digital con enfoque en resultados que automatiza, diseña y hace crecer negocios digitales combinando tecnología, diseño e inteligencia artificial.',
+      image: '🚀',
+      technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'n8n', 'OpenAI API', 'RAG'],
+      features: ['Automatización inteligente', 'IA contextual (RAG)', 'Diseño profesional', 'Marketing que funciona', 'Chatbots personalizados', 'Integración de APIs'],
+      status: 'Completado',
+      type: 'Agency Website',
+      icon: Building2,
+      demoUrl: 'https://strategikagency.com',
+      githubUrl: 'https://github.com/MarvinZavala'
     }
   ]
 
@@ -152,22 +173,14 @@ export default function Projects() {
                     </div>
 
                     {/* Action Buttons */}
-                    <div className="flex gap-3 pt-4">
+                    <div className="flex pt-4">
                       <Button 
                         size="sm" 
-                        className="flex-1"
+                        className="w-full bg-gradient-to-r from-primary to-blue-600 hover:from-primary/90 hover:to-blue-600/90 text-white font-semibold"
                         onClick={() => window.open(project.demoUrl, '_blank')}
                       >
                         <ExternalLink className="w-4 h-4 mr-2" />
-                        Ver Demo
-                      </Button>
-                      <Button 
-                        variant="outline" 
-                        size="sm"
-                        onClick={() => window.open(project.githubUrl, '_blank')}
-                      >
-                        <Github className="w-4 h-4 mr-2" />
-                        Código
+                        🚀 Explorar Proyecto
                       </Button>
                     </div>
                   </CardContent>
@@ -189,20 +202,20 @@ export default function Projects() {
             <CardContent className="p-8">
               <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
                 <div className="space-y-2">
-                  <div className="text-3xl font-bold text-primary">4+</div>
-                  <div className="text-sm text-muted-foreground">Proyectos completados</div>
+                  <div className="text-3xl font-bold text-primary">5</div>
+                  <div className="text-sm text-muted-foreground">{t('projects.stats.projectsCompleted')}</div>
                 </div>
                 <div className="space-y-2">
-                  <div className="text-3xl font-bold text-primary">2</div>
-                  <div className="text-sm text-muted-foreground">Apps móviles</div>
+                  <div className="text-3xl font-bold text-primary">1</div>
+                  <div className="text-sm text-muted-foreground">{t('projects.stats.digitalAgency')}</div>
                 </div>
                 <div className="space-y-2">
-                  <div className="text-3xl font-bold text-primary">10+</div>
-                  <div className="text-sm text-muted-foreground">APIs integradas</div>
+                  <div className="text-3xl font-bold text-primary">15+</div>
+                  <div className="text-sm text-muted-foreground">{t('projects.stats.apisIntegrated')}</div>
                 </div>
                 <div className="space-y-2">
-                  <div className="text-3xl font-bold text-primary">100%</div>
-                  <div className="text-sm text-muted-foreground">Proyectos funcionales</div>
+                  <div className="text-3xl font-bold text-primary">100+</div>
+                  <div className="text-sm text-muted-foreground">{t('projects.stats.satisfiedClients')}</div>
                 </div>
               </div>
             </CardContent>
@@ -217,13 +230,16 @@ export default function Projects() {
           viewport={{ once: true }}
           className="text-center mt-16"
         >
-          <h3 className="text-2xl font-bold mb-4">¿Tienes una idea en mente?</h3>
+          <h3 className="text-2xl font-bold mb-4">{t('projects.cta.title')}</h3>
           <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-            Estoy siempre abierto a nuevos desafíos y colaboraciones. 
-            Si tienes un proyecto interesante, ¡hablemos!
+            {t('projects.cta.description')}
           </p>
-          <Button size="lg" className="bg-primary hover:bg-primary/90">
-            Iniciar un proyecto
+          <Button 
+            size="lg" 
+            className="bg-primary hover:bg-primary/90"
+            onClick={() => scrollToSection('contact')}
+          >
+            {t('projects.cta.button')}
           </Button>
         </motion.div>
       </div>

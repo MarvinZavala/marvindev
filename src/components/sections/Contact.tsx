@@ -7,8 +7,10 @@ import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 import { Mail, Phone, MapPin, Github, Linkedin, Send, MessageCircle } from 'lucide-react'
 import { useState } from 'react'
+import { useLanguage } from '@/contexts/LanguageContext'
 
 export default function Contact() {
+  const { t } = useLanguage()
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -25,7 +27,7 @@ export default function Contact() {
     e.preventDefault()
     // Aquí se integraría con Formspree o similar
     console.log('Form submitted:', formData)
-    alert('¡Mensaje enviado! Te responderé pronto.')
+    alert(t('contact.form.success'))
     setFormData({ name: '', email: '', subject: '', message: '' })
   }
 
@@ -33,18 +35,18 @@ export default function Contact() {
     {
       icon: Mail,
       title: 'Email',
-      value: 'marvin@example.com',
-      link: 'mailto:marvin@example.com'
+      value: 'zavalarivas4@gmail.com',
+      link: 'mailto:zavalarivas4@gmail.com'
     },
     {
       icon: Phone,
-      title: 'Teléfono',
-      value: '+1 (510) 123-4567',
-      link: 'tel:+15101234567'
+      title: t('contact.phoneTitle'),
+      value: '(314) 219-7006',
+      link: 'tel:+13142197006'
     },
     {
       icon: MapPin,
-      title: 'Ubicación',
+      title: t('contact.locationTitle'),
       value: 'Oakland, California',
       link: 'https://maps.google.com/?q=Oakland,CA'
     }
@@ -54,20 +56,20 @@ export default function Contact() {
     {
       icon: Github,
       name: 'GitHub',
-      url: 'https://github.com/marvinzavala',
-      username: '@marvinzavala'
+      url: 'https://github.com/MarvinZavala',
+      username: '@MarvinZavala'
     },
     {
       icon: Linkedin,
       name: 'LinkedIn',
-      url: 'https://linkedin.com/in/marvin-zavala',
+      url: 'https://www.linkedin.com/in/marvin-zavaladev',
       username: 'Marvin Zavala'
     },
     {
       icon: MessageCircle,
       name: 'Discord',
       url: '#',
-      username: 'marvindev#1234'
+      username: 'marvindev_'
     }
   ]
 
@@ -82,10 +84,10 @@ export default function Contact() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-foreground to-primary bg-clip-text text-transparent">
-            Contacto
+            {t('contact.title')}
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            ¿Tienes un proyecto en mente? ¿Quieres colaborar? ¡Me encantaría escuchar de ti!
+            {t('contact.subtitle')}
           </p>
         </motion.div>
 
@@ -101,7 +103,7 @@ export default function Contact() {
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <Send className="w-5 h-5 text-primary" />
-                  Envíame un mensaje
+                  {t('contact.sendMessage')}
                 </CardTitle>
               </CardHeader>
               <CardContent>
@@ -109,20 +111,20 @@ export default function Contact() {
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div className="space-y-2">
                       <label htmlFor="name" className="text-sm font-medium">
-                        Nombre *
+                        {t('contact.form.name')} *
                       </label>
                       <Input
                         id="name"
                         name="name"
                         value={formData.name}
                         onChange={handleInputChange}
-                        placeholder="Tu nombre completo"
+                        placeholder={t('contact.namePlaceholder')}
                         required
                       />
                     </div>
                     <div className="space-y-2">
                       <label htmlFor="email" className="text-sm font-medium">
-                        Email *
+                        {t('contact.form.email')} *
                       </label>
                       <Input
                         id="email"
@@ -130,7 +132,7 @@ export default function Contact() {
                         type="email"
                         value={formData.email}
                         onChange={handleInputChange}
-                        placeholder="tu@email.com"
+                        placeholder={t('contact.emailPlaceholder')}
                         required
                       />
                     </div>
@@ -138,28 +140,28 @@ export default function Contact() {
                   
                   <div className="space-y-2">
                     <label htmlFor="subject" className="text-sm font-medium">
-                      Asunto *
+                      {t('contact.form.subject')} *
                     </label>
                     <Input
                       id="subject"
                       name="subject"
                       value={formData.subject}
                       onChange={handleInputChange}
-                      placeholder="¿De qué quieres hablar?"
+                      placeholder={t('contact.subjectPlaceholder')}
                       required
                     />
                   </div>
                   
                   <div className="space-y-2">
                     <label htmlFor="message" className="text-sm font-medium">
-                      Mensaje *
+                      {t('contact.form.message')} *
                     </label>
                     <Textarea
                       id="message"
                       name="message"
                       value={formData.message}
                       onChange={handleInputChange}
-                      placeholder="Cuéntame sobre tu proyecto o idea..."
+                      placeholder={t('contact.messagePlaceholder')}
                       rows={6}
                       required
                     />
@@ -167,7 +169,7 @@ export default function Contact() {
                   
                   <Button type="submit" className="w-full" size="lg">
                     <Send className="w-4 h-4 mr-2" />
-                    Enviar mensaje
+                    {t('contact.form.send')}
                   </Button>
                 </form>
               </CardContent>
@@ -185,7 +187,7 @@ export default function Contact() {
             {/* Contact Information */}
             <Card>
               <CardHeader>
-                <CardTitle>Información de contacto</CardTitle>
+                <CardTitle>{t('contact.info.title')}</CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
                 {contactInfo.map((info, index) => {
@@ -218,7 +220,7 @@ export default function Contact() {
             {/* Social Links */}
             <Card>
               <CardHeader>
-                <CardTitle>Sígueme en redes</CardTitle>
+                <CardTitle>{t('contact.info.follow')}</CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
                 {socialLinks.map((social, index) => {
@@ -251,26 +253,26 @@ export default function Contact() {
             {/* Availability */}
             <Card>
               <CardHeader>
-                <CardTitle>Disponibilidad</CardTitle>
+                <CardTitle>{t('contact.info.availability')}</CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="space-y-3">
                   <div className="flex items-center gap-2">
                     <div className="w-3 h-3 bg-green-500 rounded-full" />
-                    <span className="text-sm">Disponible para proyectos freelance</span>
+                    <span className="text-sm">{t('contact.info.freelance')}</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <div className="w-3 h-3 bg-blue-500 rounded-full" />
-                    <span className="text-sm">Abierto a colaboraciones</span>
+                    <span className="text-sm">{t('contact.info.collaboration')}</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <div className="w-3 h-3 bg-purple-500 rounded-full" />
-                    <span className="text-sm">Interesado en oportunidades de aprendizaje</span>
+                    <span className="text-sm">{t('contact.info.learning')}</span>
                   </div>
                 </div>
                 <div className="mt-4 p-3 bg-muted rounded-lg">
                   <p className="text-sm text-muted-foreground">
-                    <strong>Tiempo de respuesta:</strong> Usualmente respondo en menos de 24 horas.
+                    {t('contact.info.responseTime')}
                   </p>
                 </div>
               </CardContent>
@@ -288,10 +290,10 @@ export default function Contact() {
         >
           <div className="border-t pt-8">
             <p className="text-muted-foreground mb-4">
-              © 2024 Marvin Zavala. Hecho con ❤️ en Oakland, California.
+              {t('footer.copyright')}
             </p>
             <p className="text-sm text-muted-foreground">
-              Desarrollado con Next.js 15, Tailwind CSS, ShadCN UI y Framer Motion
+              {t('footer.builtWith')}
             </p>
           </div>
         </motion.div>

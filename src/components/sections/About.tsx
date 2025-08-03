@@ -2,29 +2,28 @@
 
 import { motion } from 'framer-motion'
 import { Card, CardContent } from '@/components/ui/card'
-import { Code, Brain, Rocket, Music } from 'lucide-react'
+import { Code, Brain, Rocket } from 'lucide-react'
+import { useLanguage } from '@/contexts/LanguageContext'
+import Image from 'next/image'
 
 export default function About() {
+  const { t } = useLanguage()
+  
   const interests = [
     {
       icon: Code,
-      title: 'Desarrollo Web',
-      description: 'Creando aplicaciones web modernas con Next.js y React'
+      title: t('about.webDev'),
+      description: t('about.webDevDesc')
     },
     {
       icon: Brain,
-      title: 'Inteligencia Artificial',
-      description: 'Explorando el potencial de la IA en aplicaciones prácticas'
+      title: t('about.ai'),
+      description: t('about.aiDesc')
     },
     {
       icon: Rocket,
-      title: 'Startups',
-      description: 'Desarrollando ideas innovadoras y soluciones tecnológicas'
-    },
-    {
-      icon: Music,
-      title: 'Música Latina',
-      description: 'Tocando en banda y mariachi, conectando con mis raíces'
+      title: t('about.startups'),
+      description: t('about.startupsDesc')
     }
   ]
 
@@ -39,12 +38,10 @@ export default function About() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-foreground to-primary bg-clip-text text-transparent">
-            Sobre Mí
+            {t('about.title')}
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Soy un estudiante de 11° grado apasionado por la tecnología y la innovación. 
-            Con más de un año de experiencia en desarrollo web y una app completa en React Native, 
-            busco crear soluciones que impacten positivamente en la vida de las personas.
+            {t('about.subtitle')}
           </p>
         </motion.div>
 
@@ -57,22 +54,17 @@ export default function About() {
             className="space-y-6"
           >
             <h3 className="text-2xl font-bold text-foreground">
-              Mi Historia
+              {t('about.myStory')}
             </h3>
             <div className="space-y-4 text-muted-foreground leading-relaxed">
               <p>
-                Desde Oakland, California, he encontrado en la programación una forma de 
-                expresar mi creatividad y resolver problemas reales. Mi viaje comenzó con 
-                curiosidad por entender cómo funcionan las aplicaciones que uso diariamente.
+                {t('about.story1')}
               </p>
               <p>
-                Actualmente estoy en 11° grado, pero mi pasión por la tecnología me ha llevado 
-                a desarrollar proyectos como Localfy, NEGOZAPP, Onlypic y TutorNowSV, cada uno 
-                con el objetivo de facilitar la vida de las personas a través de la tecnología.
+                {t('about.story2')}
               </p>
               <p>
-                Además de la programación, toco música latina en banda y mariachi, lo que me 
-                mantiene conectado con mis raíces y me enseña sobre trabajo en equipo y disciplina.
+                {t('about.story3')}
               </p>
             </div>
           </motion.div>
@@ -87,9 +79,11 @@ export default function About() {
             <div className="w-full h-80 bg-gradient-to-br from-primary/20 to-blue-600/20 rounded-2xl flex items-center justify-center">
               <div className="text-center">
                 <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-gradient-to-r from-primary to-blue-600 p-1">
-                  <img 
+                  <Image 
                     src="/0228D122-A3E7-43BC-A27C-A9F94B237DB5.PNG" 
                     alt="Marvin Zavala" 
+                    width={88}
+                    height={88}
                     className="w-full h-full rounded-full object-cover"
                   />
                 </div>
@@ -106,7 +100,7 @@ export default function About() {
           transition={{ duration: 0.8, delay: 0.2 }}
           viewport={{ once: true }}
         >
-          <h3 className="text-2xl font-bold text-center mb-8">Mis Intereses</h3>
+          <h3 className="text-2xl font-bold text-center mb-8">{t('about.interests')}</h3>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {interests.map((interest, index) => {
               const Icon = interest.icon

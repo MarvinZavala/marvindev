@@ -3,60 +3,46 @@
 import { motion } from 'framer-motion'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
-import { Calendar, MapPin, Code, Leaf, Music } from 'lucide-react'
+import { Calendar, MapPin, Code, Building2 } from 'lucide-react'
+import { useLanguage } from '@/contexts/LanguageContext'
 
 export default function Experience() {
+  const { t } = useLanguage()
+  
   const experiences = [
     {
-      title: 'Desarrollador Web Freelance',
-      company: 'Proyectos Independientes',
+      title: t('experience.founder'),
+      company: 'Strategika Agency',
       location: 'Oakland, CA',
-      period: '2023 - Presente',
-      type: 'Desarrollo',
-      icon: Code,
-      description: 'Desarrollo de aplicaciones web y móviles completas usando tecnologías modernas como Next.js, React Native y Firebase.',
+      period: '2024 - Presente',
+      type: t('experience.agencyType'),
+      icon: Building2,
+      description: t('experience.agencyDescription'),
       achievements: [
-        'Creé 4+ aplicaciones web funcionales desde cero',
-        'Desarrollé una app móvil completa en React Native',
-        'Integré múltiples APIs (Stripe, OpenAI, Firebase)',
-        'Implementé sistemas de autenticación y pagos',
-        'Automaticé procesos usando n8n y chatbots con RAG'
+        t('experience.agencyAchievements.founded'),
+        t('experience.agencyAchievements.chatbots'),
+        t('experience.agencyAchievements.automation'),
+        t('experience.agencyAchievements.website'),
+        t('experience.agencyAchievements.clients')
+      ],
+      technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'n8n', 'OpenAI API', 'RAG']
+    },
+    {
+      title: t('experience.freelancer'),
+      company: t('experience.company'),
+      location: 'Oakland, CA',
+      period: t('experience.period'),
+      type: t('experience.type'),
+      icon: Code,
+      description: t('experience.description'),
+      achievements: [
+        t('experience.achievement1'),
+        t('experience.achievement2'),
+        t('experience.achievement3'),
+        t('experience.achievement4'),
+        t('experience.achievement5')
       ],
       technologies: ['Next.js', 'React Native', 'Firebase', 'Stripe API', 'OpenAI API']
-    },
-    {
-      title: 'Jardinero',
-      company: 'Servicios de Jardinería Local',
-      location: 'Oakland, CA',
-      period: '2022 - 2023',
-      type: 'Trabajo de Campo',
-      icon: Leaf,
-      description: 'Trabajo de jardinería que me enseñó disciplina, responsabilidad y la importancia del trabajo duro.',
-      achievements: [
-        'Desarrollé una fuerte ética de trabajo',
-        'Aprendí gestión del tiempo y organización',
-        'Mejoré habilidades de comunicación con clientes',
-        'Gané experiencia en trabajo físico y al aire libre',
-        'Ahorré dinero para invertir en mi educación tecnológica'
-      ],
-      technologies: ['Gestión del tiempo', 'Atención al cliente', 'Trabajo en equipo']
-    },
-    {
-      title: 'Músico de Banda y Mariachi',
-      company: 'Grupos Musicales Locales',
-      location: 'Oakland, CA',
-      period: '2020 - Presente',
-      type: 'Arte y Cultura',
-      icon: Music,
-      description: 'Participación activa en bandas y mariachi, manteniendo viva la tradición musical latina.',
-      achievements: [
-        'Participé en múltiples presentaciones públicas',
-        'Desarrollé habilidades de trabajo en equipo',
-        'Mantuve conexión con mis raíces culturales',
-        'Aprendí disciplina a través de la práctica musical',
-        'Mejoré habilidades de presentación y confianza'
-      ],
-      technologies: ['Instrumentos musicales', 'Trabajo en equipo', 'Presentaciones públicas']
     }
   ]
 
@@ -64,9 +50,7 @@ export default function Experience() {
     switch (type) {
       case 'Desarrollo':
         return 'text-blue-500'
-      case 'Trabajo de Campo':
-        return 'text-green-500'
-      case 'Arte y Cultura':
+      case 'Agencia Digital':
         return 'text-purple-500'
       default:
         return 'text-gray-500'
@@ -74,16 +58,16 @@ export default function Experience() {
   }
 
   const getTypeColor = (type: string) => {
-    switch (type) {
-      case 'Desarrollo':
-        return 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200'
-      case 'Trabajo de Campo':
-        return 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200'
-      case 'Arte y Cultura':
-        return 'bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200'
-      default:
-        return 'bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-200'
+    const developmentTypes = [t('experience.type'), 'Development', 'Desarrollo']
+    const agencyTypes = ['Agencia Digital', 'Digital Agency']
+    
+    if (developmentTypes.includes(type)) {
+      return 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200'
     }
+    if (agencyTypes.includes(type)) {
+      return 'bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200'
+    }
+    return 'bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-200'
   }
 
   return (
@@ -97,10 +81,10 @@ export default function Experience() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-foreground to-primary bg-clip-text text-transparent">
-            Experiencia
+            {t('experience.title')}
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Mi trayectoria diversa me ha dado una perspectiva única, combinando tecnología, trabajo duro y arte
+            {t('experience.subtitle')}
           </p>
         </motion.div>
 
@@ -150,7 +134,7 @@ export default function Experience() {
 
                     {/* Achievements */}
                     <div>
-                      <h4 className="font-semibold mb-3">Logros y Aprendizajes</h4>
+                      <h4 className="font-semibold mb-3">{t('experience.achievements')}</h4>
                       <ul className="space-y-2">
                         {experience.achievements.map((achievement, achievementIndex) => (
                           <motion.li
@@ -170,7 +154,7 @@ export default function Experience() {
 
                     {/* Technologies/Skills */}
                     <div>
-                      <h4 className="font-semibold mb-3">Habilidades Desarrolladas</h4>
+                      <h4 className="font-semibold mb-3">{t('experience.skillsDeveloped')}</h4>
                       <div className="flex flex-wrap gap-2">
                         {experience.technologies.map((tech) => (
                           <Badge key={tech} variant="outline" className="text-xs">
@@ -196,21 +180,21 @@ export default function Experience() {
         >
           <Card className="max-w-4xl mx-auto">
             <CardHeader>
-              <CardTitle className="text-center">Resumen de Experiencia</CardTitle>
+              <CardTitle className="text-center">{t('experience.summary')}</CardTitle>
             </CardHeader>
             <CardContent>
               <div className="grid sm:grid-cols-3 gap-8 text-center">
                 <div className="space-y-2">
-                  <div className="text-3xl font-bold text-primary">3+</div>
-                  <div className="text-sm text-muted-foreground">Años de experiencia diversa</div>
+                  <div className="text-3xl font-bold text-primary">2+</div>
+                  <div className="text-sm text-muted-foreground">{t('experience.summaryStats.yearsExp')}</div>
                 </div>
                 <div className="space-y-2">
-                  <div className="text-3xl font-bold text-primary">3</div>
-                  <div className="text-sm text-muted-foreground">Áreas de experiencia</div>
+                  <div className="text-3xl font-bold text-primary">100+</div>
+                  <div className="text-sm text-muted-foreground">{t('experience.summaryStats.satisfiedClients')}</div>
                 </div>
                 <div className="space-y-2">
-                  <div className="text-3xl font-bold text-primary">15+</div>
-                  <div className="text-sm text-muted-foreground">Habilidades desarrolladas</div>
+                  <div className="text-3xl font-bold text-primary">1</div>
+                  <div className="text-sm text-muted-foreground">{t('experience.summaryStats.agencyFounded')}</div>
                 </div>
               </div>
             </CardContent>
@@ -227,11 +211,9 @@ export default function Experience() {
         >
           <Card className="max-w-3xl mx-auto">
             <CardContent className="p-8">
-              <h3 className="text-2xl font-bold mb-4">Mi Filosofía de Trabajo</h3>
+              <h3 className="text-2xl font-bold mb-4">{t('experience.philosophy')}</h3>
               <p className="text-muted-foreground leading-relaxed">
-                Cada experiencia me ha enseñado algo valioso: la jardinería me dio disciplina y ética de trabajo, 
-                la música me enseñó sobre colaboración y creatividad, y la programación me permite combinar 
-                lógica con innovación. Esta diversidad me hace un desarrollador más completo y empático.
+                {t('experience.philosophyText')}
               </p>
             </CardContent>
           </Card>

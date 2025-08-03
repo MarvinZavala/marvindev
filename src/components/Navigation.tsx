@@ -3,22 +3,25 @@
 import { motion } from 'framer-motion'
 import { Button } from '@/components/ui/button'
 import { Menu, X, Home, User, Code, Award, Briefcase, MessageCircle, Phone } from 'lucide-react'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useMemo } from 'react'
+import { useLanguage } from '@/contexts/LanguageContext'
+import LanguageSelector from './LanguageSelector'
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
   const [activeSection, setActiveSection] = useState('hero')
+  const { t } = useLanguage()
 
-  const navItems = [
-    { id: 'hero', label: 'Inicio', icon: Home },
-    { id: 'about', label: 'Sobre mí', icon: User },
-    { id: 'skills', label: 'Habilidades', icon: Code },
-    { id: 'certifications', label: 'Certificaciones', icon: Award },
-    { id: 'projects', label: 'Proyectos', icon: Briefcase },
-    { id: 'experience', label: 'Experiencia', icon: Briefcase },
-    { id: 'testimonials', label: 'Testimonios', icon: MessageCircle },
-    { id: 'contact', label: 'Contacto', icon: Phone },
-  ]
+  const navItems = useMemo(() => [
+    { id: 'hero', label: t('nav.home'), icon: Home },
+    { id: 'about', label: t('nav.about'), icon: User },
+    { id: 'skills', label: t('nav.skills'), icon: Code },
+    { id: 'certifications', label: t('nav.certifications'), icon: Award },
+    { id: 'projects', label: t('nav.projects'), icon: Briefcase },
+    { id: 'experience', label: t('nav.experience'), icon: Briefcase },
+    { id: 'testimonials', label: t('nav.testimonials'), icon: MessageCircle },
+    { id: 'contact', label: t('nav.contact'), icon: Phone },
+  ], [t])
 
   useEffect(() => {
     const handleScroll = () => {
@@ -36,7 +39,7 @@ export default function Navigation() {
 
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+  }, [navItems])
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId)
@@ -89,17 +92,27 @@ export default function Navigation() {
                   </motion.button>
                 )
               })}
+              <motion.div
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.1 * navItems.length }}
+                className="ml-2"
+              >
+                <LanguageSelector />
+              </motion.div>
             </div>
 
-            {/* Mobile Menu Button */}
-            <Button
-              variant="ghost"
-              size="sm"
-              className="lg:hidden"
-              onClick={() => setIsOpen(!isOpen)}
-            >
-              {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-            </Button>
+            {/* Mobile Menu Button and Language Selector */}
+            <div className="lg:hidden flex items-center gap-2">
+              <LanguageSelector />
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={() => setIsOpen(!isOpen)}
+              >
+                {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+              </Button>
+            </div>
           </div>
         </div>
       </motion.nav>
