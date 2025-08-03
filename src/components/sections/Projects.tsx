@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
-import { ExternalLink, Github, Smartphone, Globe, Users, GraduationCap, Building2 } from 'lucide-react'
+import { ExternalLink, Github, Smartphone, Globe, Users, GraduationCap, Building2, Palette } from 'lucide-react'
 import { useLanguage } from '@/contexts/LanguageContext'
 
 export default function Projects() {
@@ -18,76 +18,90 @@ export default function Projects() {
   }
   const projects = [
     {
-      title: 'Localfy',
-      description: 'Plataforma para conectar negocios locales con su comunidad, facilitando el descubrimiento de servicios y productos cercanos.',
+      title: t('projects.localfy.title'),
+      description: t('projects.localfy.description'),
       image: '🏪',
       technologies: ['Next.js', 'Firebase', 'Tailwind CSS', 'Google Maps API'],
-      features: ['Geolocalización', 'Perfiles de negocio', 'Sistema de reseñas', 'Chat en tiempo real'],
-      status: 'Completado',
-      type: 'Web App',
+      features: t('projects.localfy.features'),
+      status: t('projects.status.completed'),
+      type: t('projects.type.webApp'),
       icon: Globe,
       demoUrl: 'https://github.com/MarvinZavala',
       githubUrl: 'https://github.com/MarvinZavala'
     },
     {
-      title: 'NEGOZAPP',
-      description: 'Aplicación móvil completa para gestión de pequeños negocios con inventario, ventas y análisis financiero.',
+      title: t('projects.negozapp.title'),
+      description: t('projects.negozapp.description'),
       image: '📊',
       technologies: ['React Native', 'Firebase', 'Stripe API', 'Chart.js'],
-      features: ['Gestión de inventario', 'Procesamiento de pagos', 'Analytics', 'Reportes automáticos'],
-      status: 'Completado',
-      type: 'Mobile App',
+      features: t('projects.negozapp.features'),
+      status: t('projects.status.completed'),
+      type: t('projects.type.mobileApp'),
       icon: Smartphone,
       demoUrl: 'https://negozapp.com',
       githubUrl: 'https://github.com/MarvinZavala'
     },
     {
-      title: 'Onlypic',
-      description: 'Red social enfocada en fotografía con filtros AI, compartir instantáneo y comunidad de fotógrafos.',
+      title: t('projects.onlypic.title'),
+      description: t('projects.onlypic.description'),
       image: '📸',
       technologies: ['Next.js', 'Supabase', 'OpenAI API', 'Cloudinary'],
-      features: ['Filtros con IA', 'Feed personalizado', 'Stories', 'Marketplace de fotos'],
-      status: 'Completado',
-      type: 'Web App',
+      features: t('projects.onlypic.features'),
+      status: t('projects.status.completed'),
+      type: t('projects.type.webApp'),
       icon: Users,
       demoUrl: 'https://www.onlypic.art/',
       githubUrl: 'https://github.com/MarvinZavala'
     },
     {
-      title: 'TutorNowSV',
-      description: 'Plataforma educativa que conecta estudiantes con tutores especializados para clases personalizadas online.',
+      title: t('projects.tutornow.title'),
+      description: t('projects.tutornow.description'),
       image: '🎓',
       technologies: ['Next.js', 'Firebase', 'Zoom API', 'Stripe'],
-      features: ['Matching inteligente', 'Videollamadas integradas', 'Sistema de pagos', 'Calendario'],
-      status: 'Completado',
-      type: 'Web Platform',
+      features: t('projects.tutornow.features'),
+      status: t('projects.status.completed'),
+      type: t('projects.type.webPlatform'),
       icon: GraduationCap,
       demoUrl: 'https://github.com/MarvinZavala',
       githubUrl: 'https://github.com/MarvinZavala'
     },
     {
-      title: 'Strategika Agency',
-      description: 'Agencia digital con enfoque en resultados que automatiza, diseña y hace crecer negocios digitales combinando tecnología, diseño e inteligencia artificial.',
+      title: t('projects.strategika.title'),
+      description: t('projects.strategika.description'),
       image: '🚀',
       technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'n8n', 'OpenAI API', 'RAG'],
-      features: ['Automatización inteligente', 'IA contextual (RAG)', 'Diseño profesional', 'Marketing que funciona', 'Chatbots personalizados', 'Integración de APIs'],
-      status: 'Completado',
-      type: 'Agency Website',
+      features: t('projects.strategika.features'),
+      status: t('projects.status.completed'),
+      type: t('projects.type.agencyWebsite'),
       icon: Building2,
       demoUrl: 'https://strategikagency.com',
+      githubUrl: 'https://github.com/MarvinZavala'
+    },
+    {
+      title: t('projects.zalabsdigital.title'),
+      description: t('projects.zalabsdigital.description'),
+      image: '🎨',
+      technologies: ['WordPress', 'PHP', 'CSS3', 'JavaScript', 'SEO Tools', 'Analytics'],
+      features: t('projects.zalabsdigital.features'),
+      status: t('projects.status.completed'),
+      type: 'Digital Agency',
+      icon: Palette,
+      demoUrl: 'https://zalabsdigital.com',
       githubUrl: 'https://github.com/MarvinZavala'
     }
   ]
 
   const getStatusColor = (status: string) => {
-    switch (status) {
-      case 'Completado':
-        return 'bg-green-500 hover:bg-green-600'
-      case 'En desarrollo':
-        return 'bg-yellow-500 hover:bg-yellow-600'
-      default:
-        return 'bg-gray-500 hover:bg-gray-600'
+    const completedTranslations = [t('projects.status.completed'), 'Completado', 'Completed']
+    const inProgressTranslations = [t('projects.status.inProgress'), 'En desarrollo', 'In development']
+    
+    if (completedTranslations.includes(status)) {
+      return 'bg-green-500 hover:bg-green-600'
     }
+    if (inProgressTranslations.includes(status)) {
+      return 'bg-yellow-500 hover:bg-yellow-600'
+    }
+    return 'bg-gray-500 hover:bg-gray-600'
   }
 
   return (
@@ -101,10 +115,10 @@ export default function Projects() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-foreground to-primary bg-clip-text text-transparent">
-            Proyectos Destacados
+            {t('projects.title')}
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Una selección de mis proyectos más importantes, desde aplicaciones móviles hasta plataformas web completas
+            {t('projects.subtitle')}
           </p>
         </motion.div>
 
@@ -113,7 +127,7 @@ export default function Projects() {
             const Icon = project.icon
             return (
               <motion.div
-                key={project.title}
+                key={typeof project.title === 'string' ? project.title : project.title.join('')}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: index * 0.2 }}
@@ -128,28 +142,28 @@ export default function Projects() {
                         </div>
                         <div>
                           <CardTitle className="text-xl group-hover:text-primary transition-colors">
-                            {project.title}
+                            {typeof project.title === 'string' ? project.title : project.title}
                           </CardTitle>
                           <div className="flex items-center gap-2 mt-1">
                             <Icon className="w-4 h-4 text-muted-foreground" />
-                            <span className="text-sm text-muted-foreground">{project.type}</span>
+                            <span className="text-sm text-muted-foreground">{typeof project.type === 'string' ? project.type : project.type}</span>
                           </div>
                         </div>
                       </div>
-                      <Badge className={getStatusColor(project.status)}>
-                        {project.status}
+                      <Badge className={getStatusColor(typeof project.status === 'string' ? project.status : project.status.join(''))}>
+                        {typeof project.status === 'string' ? project.status : project.status.join('')}
                       </Badge>
                     </div>
                   </CardHeader>
                   
                   <CardContent className="space-y-6">
                     <p className="text-muted-foreground leading-relaxed">
-                      {project.description}
+                      {typeof project.description === 'string' ? project.description : project.description}
                     </p>
 
                     {/* Technologies */}
                     <div>
-                      <h4 className="font-semibold mb-2 text-sm">Tecnologías</h4>
+                      <h4 className="font-semibold mb-2 text-sm">{t('common.technologies')}</h4>
                       <div className="flex flex-wrap gap-2">
                         {project.technologies.map((tech) => (
                           <Badge key={tech} variant="outline" className="text-xs">
@@ -161,9 +175,9 @@ export default function Projects() {
 
                     {/* Features */}
                     <div>
-                      <h4 className="font-semibold mb-2 text-sm">Características principales</h4>
+                      <h4 className="font-semibold mb-2 text-sm">{t('projects.mainFeatures')}</h4>
                       <ul className="text-sm text-muted-foreground space-y-1">
-                        {project.features.map((feature, featureIndex) => (
+                        {(Array.isArray(project.features) ? project.features : [project.features as string]).map((feature: string, featureIndex: number) => (
                           <li key={featureIndex} className="flex items-center gap-2">
                             <div className="w-1.5 h-1.5 bg-primary rounded-full" />
                             {feature}
@@ -180,7 +194,7 @@ export default function Projects() {
                         onClick={() => window.open(project.demoUrl, '_blank')}
                       >
                         <ExternalLink className="w-4 h-4 mr-2" />
-                        🚀 Explorar Proyecto
+                        🚀 {t('projects.viewDemo')}
                       </Button>
                     </div>
                   </CardContent>
@@ -202,7 +216,7 @@ export default function Projects() {
             <CardContent className="p-8">
               <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
                 <div className="space-y-2">
-                  <div className="text-3xl font-bold text-primary">5</div>
+                  <div className="text-3xl font-bold text-primary">6</div>
                   <div className="text-sm text-muted-foreground">{t('projects.stats.projectsCompleted')}</div>
                 </div>
                 <div className="space-y-2">

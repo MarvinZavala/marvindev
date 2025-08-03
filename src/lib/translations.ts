@@ -8,7 +8,7 @@ export const translations = {
       certifications: 'Certificaciones',
       projects: 'Proyectos',
       experience: 'Experiencia',
-      testimonials: 'Testimonios',
+
       contact: 'Contacto'
     },
     // Hero Section
@@ -16,9 +16,10 @@ export const translations = {
       greeting: 'Hola, soy',
       name: 'Marvin Zavala',
       title: 'Desarrollador Web & Estudiante',
-      description: 'Estudiante de 11° grado apasionado por crear aplicaciones web innovadoras con Next.js, React Native y tecnologías modernas.',
+      description: 'Estudiante de preparatoria apasionado por crear aplicaciones web innovadoras con Next.js, React Native y tecnologías modernas.',
       cta: 'Ver mis proyectos',
-      contact: 'Contactar'
+      contact: 'Contactar',
+      age: '18 años'
     },
     // About Section
     about: {
@@ -113,6 +114,13 @@ export const translations = {
         description: 'Agencia digital con enfoque en resultados que automatiza, diseña y hace crecer negocios digitales combinando tecnología, diseño e inteligencia artificial.',
         features: ['Automatización inteligente', 'IA contextual (RAG)', 'Diseño profesional', 'Marketing que funciona', 'Chatbots personalizados', 'Integración de APIs']
       },
+      zalabsdigital: {
+        title: 'Zalabsdigital',
+        description: 'Sitio web corporativo para agencia de marketing digital que ofrece servicios de desarrollo web, SEO, gestión de redes sociales y branding. Incluye secciones de servicios, portafolio de proyectos y formularios de contacto.',
+        technology: 'WordPress',
+        note: 'Una de mis primeras webs, creada con WordPress',
+        features: ['Diseño responsive y moderno', 'Secciones de servicios detalladas', 'Portafolio de proyectos', 'Formularios de contacto', 'Optimización SEO']
+      },
       status: {
         completed: 'Completado',
         inProgress: 'En desarrollo'
@@ -179,21 +187,7 @@ export const translations = {
         googleCloud: 'Google Cloud Professional Developer'
       }
     },
-    // Testimonials Section
-    testimonials: {
-      title: 'Testimonios',
-      subtitle: 'Lo que dicen mis clientes y colaboradores sobre mi trabajo',
-      quotes: 'Frases Inspiradoras',
-      clientTestimonials: 'Lo que dicen mis clientes',
-      inspirationalQuotes: 'Frases que me inspiran',
-      personalMission: 'Mi misión es usar la tecnología para crear soluciones que realmente importen, conectando a las personas y facilitando sus vidas diarias.',
-      stats: {
-        satisfaction: 'Satisfacción del cliente',
-        rating: 'Calificación promedio',
-        clients: 'Clientes satisfechos',
-        response: 'Tiempo de respuesta'
-      }
-    },
+
     // Contact Section
     contact: {
       title: 'Contacto',
@@ -238,7 +232,8 @@ export const translations = {
       close: 'Cerrar',
       open: 'Abrir',
       more: 'Ver más',
-      less: 'Ver menos'
+      less: 'Ver menos',
+      technologies: 'Tecnologías'
     }
   },
   en: {
@@ -250,7 +245,7 @@ export const translations = {
       certifications: 'Certifications',
       projects: 'Projects',
       experience: 'Experience',
-      testimonials: 'Testimonials',
+
       contact: 'Contact'
     },
     // Hero Section
@@ -258,9 +253,10 @@ export const translations = {
       greeting: 'Hi, I\'m',
       name: 'Marvin Zavala',
       title: 'Web Developer & Student',
-      description: '11th grade student passionate about creating innovative web applications with Next.js, React Native and modern technologies.',
+      description: 'High school student passionate about creating innovative web applications with Next.js, React Native and modern technologies.',
       cta: 'View my projects',
-      contact: 'Contact me'
+      contact: 'Contact me',
+      age: '18 years old'
     },
     // About Section
     about: {
@@ -355,6 +351,13 @@ export const translations = {
         description: 'Results-focused digital agency that automates, designs and grows digital businesses by combining technology, design and artificial intelligence.',
         features: ['Smart automation', 'Contextual AI (RAG)', 'Professional design', 'Marketing that works', 'Custom chatbots', 'API integration']
       },
+      zalabsdigital: {
+        title: 'Zalabsdigital',
+        description: 'Corporate website for a digital marketing agency offering web development, SEO, social media management and branding services. Features service sections, project portfolio and contact forms.',
+        technology: 'WordPress',
+        note: 'One of my first websites, created with WordPress',
+        features: ['Responsive and modern design', 'Detailed service sections', 'Project portfolio', 'Contact forms', 'SEO optimization']
+      },
       status: {
         completed: 'Completed',
         inProgress: 'In development'
@@ -421,21 +424,7 @@ export const translations = {
         googleCloud: 'Google Cloud Professional Developer'
       }
     },
-    // Testimonials Section
-    testimonials: {
-      title: 'Testimonials',
-      subtitle: 'What my clients and collaborators say about my work',
-      quotes: 'Inspirational Quotes',
-      clientTestimonials: 'What my clients say',
-      inspirationalQuotes: 'Quotes that inspire me',
-      personalMission: 'My mission is to use technology to create solutions that really matter, connecting people and making their daily lives easier.',
-      stats: {
-        satisfaction: 'Client satisfaction',
-        rating: 'Average rating',
-        clients: 'Satisfied clients',
-        response: 'Response time'
-      }
-    },
+
     // Contact Section
     contact: {
       title: 'Contact',
@@ -480,7 +469,8 @@ export const translations = {
       close: 'Close',
       open: 'Open',
       more: 'See more',
-      less: 'See less'
+      less: 'See less',
+      technologies: 'Technologies'
     }
   }
 };

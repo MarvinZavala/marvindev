@@ -163,7 +163,7 @@ export default function Certifications() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {achievements.map((achievement, index) => (
               <motion.div
-                key={achievement.title}
+                key={typeof achievement.title === 'string' ? achievement.title : achievement.title.join('')}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: index * 0.1 }}

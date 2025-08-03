@@ -116,7 +116,7 @@ export default function Skills() {
               <div className="space-y-6">
                 {languages.map((language, index) => (
                   <motion.div
-                    key={language.name}
+                    key={typeof language.name === 'string' ? language.name : language.name.join('')}
                     initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.8, delay: index * 0.2 }}

@@ -19,7 +19,6 @@ export default function Navigation() {
     { id: 'certifications', label: t('nav.certifications'), icon: Award },
     { id: 'projects', label: t('nav.projects'), icon: Briefcase },
     { id: 'experience', label: t('nav.experience'), icon: Briefcase },
-    { id: 'testimonials', label: t('nav.testimonials'), icon: MessageCircle },
     { id: 'contact', label: t('nav.contact'), icon: Phone },
   ], [t])
 

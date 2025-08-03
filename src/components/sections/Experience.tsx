@@ -93,7 +93,7 @@ export default function Experience() {
             const Icon = experience.icon
             return (
               <motion.div
-                key={experience.title}
+                key={typeof experience.title === 'string' ? experience.title : experience.title.join('')}
                 initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, delay: index * 0.2 }}
@@ -103,7 +103,7 @@ export default function Experience() {
                   <CardHeader>
                     <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
                       <div className="flex items-start gap-4">
-                        <div className={`w-12 h-12 rounded-lg bg-muted flex items-center justify-center ${getIconColor(experience.type)}`}>
+                        <div className={`w-12 h-12 rounded-lg bg-muted flex items-center justify-center ${getIconColor(typeof experience.type === 'string' ? experience.type : experience.type.join(''))}`}>
                           <Icon className="w-6 h-6" />
                         </div>
                         <div className="flex-1">
@@ -121,8 +121,8 @@ export default function Experience() {
                           </div>
                         </div>
                       </div>
-                      <Badge className={getTypeColor(experience.type)}>
-                        {experience.type}
+                      <Badge className={getTypeColor(typeof experience.type === 'string' ? experience.type : experience.type.join(''))}>
+                          {typeof experience.type === 'string' ? experience.type : experience.type.join('')}
                       </Badge>
                     </div>
                   </CardHeader>

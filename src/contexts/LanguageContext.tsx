@@ -6,7 +6,7 @@ import { translations, Language } from '@/lib/translations';
 interface LanguageContextType {
   language: Language;
   setLanguage: (lang: Language) => void;
-  t: (key: string) => string;
+  t: (key: string) => string | string[];
   isAutoDetected: boolean;
 }
 
@@ -69,7 +69,7 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
   }, [language]);
 
   // Translation function
-  const t = (key: string): string => {
+  const t = (key: string): string | string[] => {
     const keys = key.split('.');
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     let value: any = translations[language];
@@ -83,7 +83,7 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
       }
     }
     
-    return typeof value === 'string' ? value : key;
+    return typeof value === 'string' || Array.isArray(value) ? value : key;
   };
 
   // Custom setLanguage that marks manual selection

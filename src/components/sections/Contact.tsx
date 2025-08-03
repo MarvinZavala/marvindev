@@ -118,7 +118,7 @@ export default function Contact() {
                         name="name"
                         value={formData.name}
                         onChange={handleInputChange}
-                        placeholder={t('contact.namePlaceholder')}
+                        placeholder={Array.isArray(t('contact.namePlaceholder')) ? (t('contact.namePlaceholder') as string[]).join('') : t('contact.namePlaceholder') as string}
                         required
                       />
                     </div>
@@ -132,7 +132,7 @@ export default function Contact() {
                         type="email"
                         value={formData.email}
                         onChange={handleInputChange}
-                        placeholder={t('contact.emailPlaceholder')}
+                        placeholder={Array.isArray(t('contact.emailPlaceholder')) ? (t('contact.emailPlaceholder') as string[]).join('') : t('contact.emailPlaceholder') as string}
                         required
                       />
                     </div>
@@ -147,7 +147,7 @@ export default function Contact() {
                       name="subject"
                       value={formData.subject}
                       onChange={handleInputChange}
-                      placeholder={t('contact.subjectPlaceholder')}
+                      placeholder={Array.isArray(t('contact.subjectPlaceholder')) ? (t('contact.subjectPlaceholder') as string[]).join('') : t('contact.subjectPlaceholder') as string}
                       required
                     />
                   </div>
@@ -161,7 +161,7 @@ export default function Contact() {
                       name="message"
                       value={formData.message}
                       onChange={handleInputChange}
-                      placeholder={t('contact.messagePlaceholder')}
+                      placeholder={Array.isArray(t('contact.messagePlaceholder')) ? (t('contact.messagePlaceholder') as string[]).join('') : t('contact.messagePlaceholder') as string}
                       rows={6}
                       required
                     />
@@ -194,7 +194,7 @@ export default function Contact() {
                   const Icon = info.icon
                   return (
                     <motion.a
-                      key={info.title}
+                      key={typeof info.title === 'string' ? info.title : info.title.join('')}
                       href={info.link}
                       target={info.link.startsWith('http') ? '_blank' : undefined}
                       rel={info.link.startsWith('http') ? 'noopener noreferrer' : undefined}

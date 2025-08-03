@@ -69,7 +69,7 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.8 }}
             className="text-lg text-muted-foreground flex items-center justify-center gap-2"
           >
-            📍 Oakland, California • 18 años
+            📍 Oakland, California • {t('hero.age')}
           </motion.p>
 
           {/* CTA Buttons */}
